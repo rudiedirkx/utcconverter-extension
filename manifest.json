@@ -1,0 +1,21 @@
+{
+	"name": "UTC Converter",
+	"version": "1.0",
+	"manifest_version": 3,
+
+	"description": "Convert a UTC timestamp to the local datetime.",
+	"icons": {
+		"128": "logo_128.png"
+	},
+
+	"permissions": ["contextMenus"],
+	"background": {
+		"service_worker": "utcconverter.sw.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["utcconverter.content.js"]
+		}
+	]
+}
